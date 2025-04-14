@@ -1,1 +1,1 @@
-# vueJs_movie_app
+# vueJs_movies_project
