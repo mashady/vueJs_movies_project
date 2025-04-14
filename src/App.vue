@@ -1,12 +1,13 @@
 <template>
-  <h1>hello user👋</h1>
   <main>
+      <NavBar />
       <RouterView />
     </main>
 </template>
 
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 </script>
 
 <style scoped>
