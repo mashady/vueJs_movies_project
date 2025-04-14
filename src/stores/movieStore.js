@@ -1,0 +1,12 @@
+import { defineStore } from 'pinia'
+import axios from 'axios'
+
+
+export const useMovieStore = defineStore('movieStore', {
+  state: () => ({
+  
+  }),
+  actions: {
+   
+  }
+})
