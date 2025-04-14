@@ -1,6 +1,7 @@
 <template>
+   <NavBar />
   <main>
-      <NavBar />
+     
       <RouterView />
     </main>
 </template>
@@ -15,5 +16,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 1rem;
 }
+  main{
+    margin-top:100px;
+  }
 
 </style>
