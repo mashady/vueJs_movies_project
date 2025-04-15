@@ -16,3 +16,8 @@ app.component('NavBar', NavBar)
 app.component('Footer', Footer)
 
 app.mount('#app')
+
+const user = JSON.parse(localStorage.getItem("user"));
+if (user) {
+  // Set global user state if needed
+}
