@@ -7,6 +7,8 @@ import NavBar from './components/NavBar.vue'
 import Footer from './components/Footer.vue'
 
 import 'bootstrap'
+import 'vue-cal/dist/vuecal.css'
+
 const app = createApp(App)
 
 app.use(createPinia())

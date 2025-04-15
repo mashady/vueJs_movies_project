@@ -1,8 +1,10 @@
 <template>
   <NavBar />
-  <main class="main-content" style="min-height: 150vh">
+  <main class="main-content " style="min-height: 150vh">
+<div class="">
+  <RouterView />
 
-    <RouterView />
+</div>
   </main>
   <Footer />
 </template>
@@ -18,7 +20,11 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
   padding: 1rem;
 }
   main{
-    margin-top:100px;
+    padding-top:100px;
+  }
+  .main-content{
+    background-color: #151515;
+    color: #FFF;
   }
 
 </style>
