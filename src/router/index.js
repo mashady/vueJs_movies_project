@@ -8,6 +8,7 @@ import Trending from '../pages/Trending.vue'
 import AllMovies from '../pages/AllMovies.vue'
 import AllTV from '../pages/AllTV.vue'
 import Calendar from '../pages/Calendar.vue'
+import WatchList from '../pages/WatchList.vue'
 const requireAuth = (to, from, next) => {
   const user = JSON.parse(localStorage.getItem("user"));
   if (user) next();
@@ -18,6 +19,7 @@ const routes = [
   { path: '/', name: 'Home', component: Trending },
   { path: '/calendar', name: 'Home', component: Calendar },
   { path: '/now-playing', name: 'NowPlaying', component: NowPlaying },
+  { path: '/watch-list', name: 'WatchList', component: WatchList, beforeEnter: requireAuth },
   { path: '/upcoming', name: 'Upcoming', component: Upcoming, beforeEnter: requireAuth },
   { path: "/login", name: "Login", component: Login },
   { path: "/register", name: "Register", component: Register },

@@ -18,12 +18,12 @@
   ],
   "calendar": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Gangs of London S3E3",
       "date": "2025-04-02"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Surface S2E7",
       "date": "2025-04-02"
     },
@@ -176,6 +176,51 @@
       "id": "a0ce",
       "title": "In the Lost Lands",
       "date": "2025-04-15"
+    }
+  ],
+  "watchlist": [
+    {
+      "id": 1195506,
+      "adult": false,
+      "backdrop_path": "/sNx1A3822kEbqeUxvo5A08o4N7o.jpg",
+      "genre_ids": [
+        28,
+        35,
+        53
+      ],
+      "original_language": "en",
+      "original_title": "Novocaine",
+      "overview": "When the girl of his dreams is kidnapped, everyman Nate turns his inability to feel pain into an unexpected strength in his fight to get her back.",
+      "popularity": 587.5344,
+      "poster_path": "/xmMHGz9dVRaMY6rRAlEX4W0Wdhm.jpg",
+      "release_date": "2025-03-12",
+      "title": "Novocaine",
+      "video": false,
+      "vote_average": 6.8,
+      "vote_count": 385,
+      "added_at": "2025-04-15T23:37:52.590Z"
+    },
+    {
+      "id": 950387,
+      "adult": false,
+      "backdrop_path": "/2Nti3gYAX513wvhp8IiLL6ZDyOm.jpg",
+      "genre_ids": [
+        10751,
+        35,
+        12,
+        14
+      ],
+      "original_language": "en",
+      "original_title": "A Minecraft Movie",
+      "overview": "Four misfits find themselves struggling with ordinary problems when they are suddenly pulled through a mysterious portal into the Overworld: a bizarre, cubic wonderland that thrives on imagination. To get back home, they'll have to master this world while embarking on a magical quest with an unexpected, expert crafter, Steve.",
+      "popularity": 695.7057,
+      "poster_path": "/yFHHfHcUgGAxziP1C3lLt0q2T4s.jpg",
+      "release_date": "2025-03-31",
+      "title": "A Minecraft Movie",
+      "video": false,
+      "vote_average": 6.077,
+      "vote_count": 523,
+      "added_at": "2025-04-15T23:37:54.156Z"
     }
   ]
 }

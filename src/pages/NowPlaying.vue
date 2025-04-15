@@ -1,5 +1,3 @@
-
-
 <template>
   <MovieList title="Now Playing" type="now_playing" />
 </template>
