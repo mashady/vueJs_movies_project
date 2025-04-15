@@ -27,11 +27,22 @@
     background-color: #2e2e2e;
     color: #fff;
     width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   
   .form-control::placeholder {
     color: #ccc;
-    opacity: 1; 
+    opacity: 1;
+  }
+  
+  .form-control:focus {
+    background-color: #444;
+    color: #fff;
+    outline: none; 
+  }
+  
+  .form-control:focus::placeholder {
+    color: #fff; 
   }
   </style>
   

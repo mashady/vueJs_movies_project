@@ -1,6 +1,5 @@
-
-   <template>
-    <MovieList title="Upcoming Movies" type="upcoming" />
+<template>
+    <MovieList title="All Movies" type="popular" />
   </template>
   <script setup>
   import MovieList from '../views/MovieList.vue'
