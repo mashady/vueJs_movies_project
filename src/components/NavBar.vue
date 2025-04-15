@@ -135,10 +135,23 @@ export default {
 }
 
 @media (max-width: 991.98px) {
+    .container {
+        max-width: 100%;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
     .navbar {
-        padding: 1rem;
         height: auto;
-        overflow-y: visible;
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-brand {
+        position: absolute;
     }
 
     .navbar-collapse {
@@ -177,11 +190,8 @@ export default {
         transform: none;
     }
 
-    .navbar-brand {
-        font-size: 1.5rem;
-        position: sticky;
-        top: 0;
-        z-index: 1030;
+    .navbar-toggler {
+        margin-left: auto;
     }
 }
 

@@ -1,9 +1,10 @@
 <template>
-   <NavBar />
-  <main>
-     
-      <RouterView />
-    </main>
+  <NavBar />
+  <main class="main-content" style="min-height: 150vh">
+
+    <RouterView />
+  </main>
+  <Footer />
 </template>
 
 <script setup>
