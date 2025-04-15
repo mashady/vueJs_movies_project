@@ -1,7 +1,5 @@
-
-
 <template>
-  <MovieList title="Now Playing" type="now_playing" />
+  <MovieList title="Top Rated" type="top_rated" />
 </template>
 <script setup>
 import MovieList from '../views/MovieList.vue'

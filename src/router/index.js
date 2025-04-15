@@ -1,33 +1,35 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../pages/Home.vue'
 import NowPlaying from '../pages/NowPlaying.vue'
 import Upcoming from '../pages/Upcoming.vue'
 import Login from '../pages/Login.vue'
 import Register from '../pages/Register.vue'
+import TopRated from '../pages/TopRated.vue'
+import Trending from '../pages/Trending.vue'
+import AllMovies from '../pages/AllMovies.vue'
+import AllTV from '../pages/AllTV.vue'
 import Calendar from '../pages/Calendar.vue'
-
 const requireAuth = (to, from, next) => {
   const user = JSON.parse(localStorage.getItem("user"));
   if (user) next();
   else next("/login");
 };
 
-
-
-
 const routes = [
-  { path: '/', name: 'Home', component: Home ,beforeEnter: requireAuth},
-  { path: '/calendar', name: 'Calendar', component: Calendar},
-  { path: '/now-playing', name: 'NowPlaying', component: NowPlaying ,beforeEnter: requireAuth},
-  { path: '/upcoming', name: 'Upcoming', component: Upcoming ,beforeEnter: requireAuth},
-  {path: "/login",name: "Login",component: Login},
-  {path: "/register",name : "Register",component: Register}
-  
-]
+  { path: '/', name: 'Home', component: Trending },
+  { path: '/calendar', name: 'Home', component: Calendar },
+  { path: '/now-playing', name: 'NowPlaying', component: NowPlaying },
+  { path: '/upcoming', name: 'Upcoming', component: Upcoming, beforeEnter: requireAuth },
+  { path: "/login", name: "Login", component: Login },
+  { path: "/register", name: "Register", component: Register },
+  { path: '/top-rated', component: TopRated },
+  { path: '/trending', component: Trending },
+  { path: '/movies', name: 'AllMovies', component: AllMovies },
+  { path: '/tv', name: 'AllTV', component: AllTV }
+];
 
 const router = createRouter({
   history: createWebHistory(),
   routes
-})
+});
 
-export default router
+export default router;
