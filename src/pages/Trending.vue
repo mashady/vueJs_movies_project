@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid bg-dark min-vh-100 py-4">
+    <div class="container-fluid  min-vh-100 py-4">
       <h2 class="text-light text-center mb-3">Trending Movies</h2>
       <SearchBar @search="handleSearch" />
   
