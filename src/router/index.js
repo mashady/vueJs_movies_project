@@ -15,8 +15,8 @@ const requireAuth = (to, from, next) => {
 };
 
 const routes = [
-  { path: '/', name: 'Home', component: Trending },
-  { path: '/calendar', name: 'Home', component: Calendar },
+  { path: '', name: 'Trending', component: Trending },
+  { path: '/calendar', name: 'Home', component: Calendar,beforeEnter: requireAuth },
   { path: '/now-playing', name: 'NowPlaying', component: NowPlaying },
   { path: '/upcoming', name: 'Upcoming', component: Upcoming, beforeEnter: requireAuth },
   { path: "/login", name: "Login", component: Login },
