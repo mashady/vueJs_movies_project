@@ -14,168 +14,31 @@
       "id": "80ac",
       "username": "aya",
       "password": "aya123"
+    },
+    {
+      "id": "b0d7",
+      "username": "samir",
+      "password": "123456789"
     }
   ],
   "calendar": [
     {
-      "id": 1,
-      "title": "Gangs of London S3E3",
-      "date": "2025-04-02"
-    },
-    {
-      "id": 2,
-      "title": "Surface S2E7",
-      "date": "2025-04-02"
-    },
-    {
-      "id": "77a9",
-      "title": "G20",
-      "date": "2025-04-16",
-      "watched": true
-    },
-    {
-      "id": "c768",
-      "title": "In the Lost Lands",
-      "date": "2025-04-25"
-    },
-    {
-      "id": "87de",
-      "title": "G20",
-      "date": "2025-04-17"
-    },
-    {
-      "id": "a48b",
-      "title": "G20",
-      "date": "2025-04-12"
-    },
-    {
-      "id": "62b9",
-      "title": "In the Lost Lands",
-      "date": "2025-04-03"
-    },
-    {
-      "id": "3a1d",
-      "title": "Novocaine",
-      "date": "2025-04-04"
-    },
-    {
-      "id": "a2ff",
-      "title": "Novocaine",
-      "date": "2025-04-17"
-    },
-    {
-      "id": "fa29",
-      "title": "Novocaine",
-      "date": "2025-04-18"
-    },
-    {
-      "id": "2cc8",
-      "title": "G20",
-      "date": "2025-04-03"
-    },
-    {
-      "id": "32a8",
-      "title": "G20",
-      "date": "2025-04-03"
-    },
-    {
-      "id": "9021",
-      "title": "G20",
-      "date": "2025-04-03"
-    },
-    {
-      "id": "453d",
-      "title": "Novocaine",
-      "date": "2025-04-04"
-    },
-    {
-      "id": "ebe1",
-      "title": "In the Lost Lands",
-      "date": "2025-04-02"
-    },
-    {
-      "id": "0987",
-      "title": "Novocaine",
-      "date": "2025-04-19"
-    },
-    {
-      "id": "1037",
+      "id": "1720",
       "title": "A Minecraft Movie",
-      "date": "2025-04-09"
+      "date": "2025-04-17",
+      "userId": "b0d7"
     },
     {
-      "id": "d5ca",
-      "title": "A Minecraft Movie",
-      "date": "2025-04-16"
-    },
-    {
-      "id": "29f4",
+      "id": "4a1a",
       "title": "Novocaine",
-      "date": "2025-04-17"
+      "date": "2025-04-18",
+      "userId": "1"
     },
     {
-      "id": "1e19",
-      "title": "Novocaine",
-      "date": "2025-04-18"
-    },
-    {
-      "id": "ae08",
-      "date": "2025-04-17"
-    },
-    {
-      "id": "2440",
-      "title": "Novocaine",
-      "date": "2025-04-17"
-    },
-    {
-      "id": "cdec",
-      "title": "G20",
-      "date": "2025-04-18"
-    },
-    {
-      "id": "68e4",
-      "title": "G20",
-      "date": "2025-04-17"
-    },
-    {
-      "id": "8055",
-      "title": "In the Lost Lands",
-      "date": "2025-04-17"
-    },
-    {
-      "id": "0e93",
-      "title": "A Minecraft Movie",
-      "date": "2025-04-17"
-    },
-    {
-      "id": "0c91",
-      "title": "Novocaine",
-      "date": "2025-04-17"
-    },
-    {
-      "id": "21b0",
-      "title": "Novocaine",
-      "date": "2025-04-19"
-    },
-    {
-      "id": "6733",
-      "title": "Novocaine",
-      "date": "2025-04-01"
-    },
-    {
-      "id": "5f22",
-      "title": "Novocaine",
-      "date": "2025-04-26"
-    },
-    {
-      "id": "0b7f",
-      "title": "In the Lost Lands",
-      "date": "2025-04-18"
-    },
-    {
-      "id": "a0ce",
-      "title": "In the Lost Lands",
-      "date": "2025-04-15"
+      "id": "640f",
+      "title": "Cleaner",
+      "date": "2025-04-17",
+      "userId": "1"
     }
   ]
 }

@@ -7,19 +7,19 @@ export const useMovieCalendarStore = defineStore('movieCalendar', {
     error: null,
     selectedMovie: null
   }),
-  
+
   actions: {
-    async fetchEvents() {
+    async fetchEvents(userId) {
       this.loading = true
       this.error = null
-      
+
       try {
-        const res = await fetch('http://localhost:3000/calendar')
+        const res = await fetch(`http://localhost:3000/calendar?userId=${userId}`)
         
         if (!res.ok) {
           throw new Error(`Failed to fetch movies (${res.status})`)
         }
-        
+
         const data = await res.json()
         this.events = data.map(item => ({
           start: item.date,
@@ -37,34 +37,35 @@ export const useMovieCalendarStore = defineStore('movieCalendar', {
         this.loading = false
       }
     },
-    
+
     setSelectedMovie(movie) {
       this.selectedMovie = movie
     },
-    
+
     clearSelectedMovie() {
       this.selectedMovie = null
     },
+
     
-    async addEvent(movieData) {
+    async addEvent(movieData, userId) {
       this.loading = true
       this.error = null
-      
+
       try {
         const response = await fetch('http://localhost:3000/calendar', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify(movieData)
+          body: JSON.stringify({ ...movieData, userId }) 
         })
-        
+
         if (!response.ok) {
           throw new Error(`Failed to add movie (${response.status})`)
         }
-        
+
         const newMovie = await response.json()
-        
+
         this.events.push({
           start: newMovie.date,
           end: newMovie.date,
@@ -74,7 +75,7 @@ export const useMovieCalendarStore = defineStore('movieCalendar', {
           watched: newMovie.watched || false,
           cssClass: newMovie.watched ? 'movie-watched' : 'movie-unwatched'
         })
-        
+
         return newMovie
       } catch (e) {
         console.error('Error adding movie event:', e)
@@ -84,7 +85,7 @@ export const useMovieCalendarStore = defineStore('movieCalendar', {
         this.loading = false
       }
     },
-    
+
     async markAsWatched(movieId) {
       try {
         const response = await fetch(`http://localhost:3000/calendar/${movieId}`, {
@@ -94,22 +95,22 @@ export const useMovieCalendarStore = defineStore('movieCalendar', {
           },
           body: JSON.stringify({ watched: true })
         })
-        
+
         if (!response.ok) {
           throw new Error(`Failed to update movie (${response.status})`)
         }
-        
+
         this.events = this.events.map(event => {
           if (event.id === movieId) {
             return { ...event, watched: true, cssClass: 'movie-watched' }
           }
           return event
         })
-        
+
         if (this.selectedMovie && this.selectedMovie.id === movieId) {
           this.selectedMovie = { ...this.selectedMovie, watched: true, cssClass: 'movie-watched' }
         }
-        
+
         return true
       } catch (e) {
         console.error('Error marking movie as watched:', e)
@@ -117,23 +118,23 @@ export const useMovieCalendarStore = defineStore('movieCalendar', {
         throw e
       }
     },
-    
+
     async deleteEvent(movieId) {
       try {
         const response = await fetch(`http://localhost:3000/calendar/${movieId}`, {
           method: 'DELETE'
         })
-        
+
         if (!response.ok) {
           throw new Error(`Failed to delete movie (${response.status})`)
         }
-        
+
         this.events = this.events.filter(event => event.id !== movieId)
-        
+
         if (this.selectedMovie && this.selectedMovie.id === movieId) {
           this.selectedMovie = null
         }
-        
+
         return true
       } catch (e) {
         console.error('Error deleting movie event:', e)

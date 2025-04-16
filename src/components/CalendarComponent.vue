@@ -98,8 +98,9 @@ const deleteMovie = async () => {
     console.error(error)
   }
 }
-
-store.fetchEvents()
+let userId = JSON.parse(localStorage.getItem('user')).id
+console.log(userId)
+store.fetchEvents(userId)
 </script>
 
 <style scoped>
