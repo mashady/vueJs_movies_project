@@ -40,5 +40,51 @@
       "date": "2025-04-17",
       "userId": "1"
     }
+  ],
+  "watchlist": [
+    {
+      "id": 1195506,
+      "adult": false,
+      "backdrop_path": "/sNx1A3822kEbqeUxvo5A08o4N7o.jpg",
+      "genre_ids": [
+        28,
+        35,
+        53
+      ],
+      "original_language": "en",
+      "original_title": "Novocaine",
+      "overview": "When the girl of his dreams is kidnapped, everyman Nate turns his inability to feel pain into an unexpected strength in his fight to get her back.",
+      "popularity": 551.0521,
+      "poster_path": "/xmMHGz9dVRaMY6rRAlEX4W0Wdhm.jpg",
+      "release_date": "2025-03-12",
+      "title": "Novocaine",
+      "video": false,
+      "vote_average": 6.873,
+      "vote_count": 408,
+      "userId": "42ea",
+      "added_at": "2025-04-16T23:29:41.794Z"
+    },
+    {
+      "id": 1045938,
+      "adult": false,
+      "backdrop_path": "/k32XKMjmXMGeydykD32jfER3BVI.jpg",
+      "genre_ids": [
+        28,
+        9648,
+        18
+      ],
+      "original_language": "en",
+      "original_title": "G20",
+      "overview": "After the G20 Summit is overtaken by terrorists, President Danielle Sutton must bring all her statecraft and military experience to defend her family and her fellow leaders.",
+      "popularity": 687.7088,
+      "poster_path": "/tSee9gbGLfqwvjoWoCQgRZ4Sfky.jpg",
+      "release_date": "2025-04-09",
+      "title": "G20",
+      "video": false,
+      "vote_average": 6.547,
+      "vote_count": 203,
+      "userId": "42ea",
+      "added_at": "2025-04-16T23:29:42.742Z"
+    }
   ]
 }
