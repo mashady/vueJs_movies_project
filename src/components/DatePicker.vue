@@ -151,7 +151,9 @@ const store = useMovieCalendarStore()
         ...props.eventData,
         date: selectedDate.value
       }
-      await store.addEvent(event)
+      let userId = JSON.parse(localStorage.getItem('user')).id
+      console.log(userId)
+      await store.addEvent(event, userId)
 
   
       confirmationMessage.value = `${props.eventData.title} added to calendar on ${formatDate(selectedDate.value)}!`
