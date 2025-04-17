@@ -30,8 +30,8 @@
                             to="/calendar">CALENDAR</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link text-light" :class="{ 'active': $route.path === '/watchlist' }"
-                            to="/watchlist">WATCHLIST</router-link>
+                        <router-link class="nav-link text-light" :class="{ 'active': $route.path === '/watch-list' }"
+                            to="/watch-list">WATCHLIST</router-link>
                     </li>
                     <li class="nav-item">
                         <router-link class="nav-link text-light" :class="{ 'active': $route.path === '/tv' }"
