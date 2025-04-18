@@ -39,6 +39,13 @@
       "title": "Cleaner",
       "date": "2025-04-17",
       "userId": "1"
+    },
+    {
+      "id": "783f",
+      "title": "The Bunker",
+      "date": "2025-04-19",
+      "userId": "1",
+      "watched": true
     }
   ],
   "watchlist": [
