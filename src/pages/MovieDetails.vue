@@ -16,8 +16,8 @@
 
             <ul class="list-unstyled">
               <li><strong>Release Date:</strong> {{ movie.release_date }}</li>
-              <li><strong>Rating:</strong> ⭐ {{ movie.vote_average }}</li>
-              <li><strong>Runtime:</strong> 🕒 {{ movie.runtime }} min</li>
+              <li><strong>Rating:</strong> {{ movie.vote_average }}</li>
+              <li><strong>Runtime:</strong> {{ movie.runtime }} min</li>
             </ul>
 
             <div class="mt-3">
@@ -32,16 +32,17 @@
             </div>
 
             <div class="mt-4 d-flex gap-2">
-              <button class="btn btn-warning fw-bold">⭐ Add to Wishlist</button>
-              <button class="btn btn-outline-info">📅 Add to Calendar</button>
+              <button class="btn btn-warning fw-bold"> Add to Wishlist</button>
+              <DatePicker
+                :event-data="{ title: movie.title }"
+              />
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Trailer Section -->
       <div v-if="trailerKey" class="mt-5">
-        <h4 class="text-center mb-3">🎬 Watch Trailer</h4>
+        <h4 class="text-center mb-3">Watch Trailer</h4>
         <div class="ratio ratio-16x9">
           <iframe
             :src="`https://www.youtube.com/embed/${trailerKey}`"
@@ -51,9 +52,8 @@
         </div>
       </div>
 
-      <!-- Cast Section -->
       <div v-if="cast.length" class="mt-5">
-        <h4 class="text-center mb-4">🎭 Top Cast</h4>
+        <h4 class="text-center mb-4"> Top Cast</h4>
         <div class="d-flex flex-wrap justify-content-center gap-4">
           <div
             v-for="actor in cast.slice(0, 6)"
@@ -72,7 +72,6 @@
       </div>
     </div>
 
-    <!-- Loading Spinner -->
     <div v-else class="text-center my-5">
       <div class="spinner-border text-light" role="status">
         <span class="visually-hidden">Loading...</span>
@@ -86,7 +85,7 @@
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import axios from 'axios'
-
+import DatePicker from '../components/DatePicker.vue'
 const route = useRoute()
 const movie = ref(null)
 const trailerKey = ref(null)
@@ -108,7 +107,6 @@ onMounted(async () => {
     )
     movie.value = movieResponse.data
 
-    // Fetch videos
     const videoResponse = await axios.get(
       `https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`,
       {
