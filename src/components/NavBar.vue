@@ -41,6 +41,13 @@
                         <router-link class="nav-link text-light" :class="{ 'active': $route.path === '/movies' }"
                             to="/movies">MOVIES</router-link>
                     </li>
+                    <li class="nav-item" v-if="isLoggedIn">
+                        <a href="#" class="nav-link text-light" @click.prevent="logout">LOGOUT</a>
+                    </li>
+                    <li class="nav-item" v-else>
+                        <router-link class="nav-link text-light" :class="{ 'active': $route.path === '/login' }"
+                            to="/login">LOGIN</router-link>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -48,27 +55,46 @@
 </template>
 
 <script>
-import { ref, onMounted, onUnmounted } from 'vue';
-import { useRoute } from 'vue-router'
+import { ref, onMounted, onUnmounted } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 export default {
     setup() {
         const route = useRoute()
+        const router = useRouter()
+
         const isScrolled = ref(false)
+        const isLoggedIn = ref(false)
 
         const handleScroll = () => {
             isScrolled.value = window.scrollY > 50
         }
 
+        const checkLogin = () => {
+            isLoggedIn.value = localStorage.getItem('user') !== null
+        }
+
+        const logout = () => {
+            localStorage.removeItem('user')
+            isLoggedIn.value = false
+            router.push('/') 
+        }
+
         onMounted(() => {
             window.addEventListener('scroll', handleScroll)
+            checkLogin()
         })
 
         onUnmounted(() => {
             window.removeEventListener('scroll', handleScroll)
         })
 
-        return { route, isScrolled }
+        return {
+            route,
+            isScrolled,
+            isLoggedIn,
+            logout
+        }
     }
 }
 </script>
@@ -116,22 +142,6 @@ export default {
     height: 2px;
     background-color: white;
     border-radius: 3px;
-}
-
-@keyframes underline {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 100%;
-    }
-}
-
-.bi-eye {
-    font-weight: bold;
-    margin: 0 2px;
-    transition: all 0.3s ease;
 }
 
 @media (max-width: 991.98px) {

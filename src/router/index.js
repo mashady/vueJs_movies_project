@@ -21,7 +21,7 @@ const routes = [
   { path: '/watch-list', name: 'watchList', component: watchList,beforeEnter: requireAuth },
   { path: '/calendar', name: 'Home', component: Calendar,beforeEnter: requireAuth },
   { path: '/now-playing', name: 'NowPlaying', component: NowPlaying },
-  { path: '/upcoming', name: 'Upcoming', component: Upcoming, beforeEnter: requireAuth },
+  { path: '/upcoming', name: 'Upcoming', component: Upcoming },
   { path: "/login", name: "Login", component: Login },
   { path: "/register", name: "Register", component: Register },
   { path: '/top-rated', component: TopRated },
