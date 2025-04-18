@@ -21,7 +21,7 @@
             </ul>
 
             <div class="mt-3">
-              <strong>Genres:</strong>
+              <strong class="me-2">Genres:</strong>
               <span
                 v-for="genre in movie.genres"
                 :key="genre.id"

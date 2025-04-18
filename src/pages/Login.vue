@@ -29,7 +29,8 @@ export default {
       const users = await res.json();
       if (users.length > 0) {
         localStorage.setItem('user', JSON.stringify(users[0]));
-        this.$router.push('/dashboard');
+        window.location.href = '/'
+
       } else {
         alert('Invalid username or password');
       }
