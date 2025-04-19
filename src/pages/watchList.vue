@@ -64,8 +64,12 @@ watch(() => route.fullPath, () => {
 })
 
 const removeFromWatchList = async (movie) => {
+    console.log(movie)
+    console.log("remooooooooooooooved")
+    console.log(movie.id)
     try {
         const success = await watchlistStore.removeFromWatchList(movie.id)
+        await watchlistStore.fetchWatchList()
         if (success) {
             toast.success('Removed from watchlist')
         }
@@ -81,7 +85,6 @@ const removeFromWatchList = async (movie) => {
 }
 
 .empty-watchlist {
-    background-color: #343a40;
     border-radius: 10px;
     padding: 2rem;
 }

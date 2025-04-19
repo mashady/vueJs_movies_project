@@ -106,7 +106,9 @@
     height: 3rem;
     border-width: 0.3rem;
   }
-  
+  .pagination{
+    gap:5px!important
+}
   .pagination .page-item .page-link {
     padding: 0.5rem 1rem;
     border-radius: 0.375rem;
