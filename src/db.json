@@ -21,9 +21,14 @@
       "password": "123456789"
     },
     {
-      "id": "3b35",
-      "username": "Marwa",
-      "password": "Marwa"
+      "id": "d50d",
+      "username": "",
+      "password": ""
+    },
+    {
+      "id": "c0bb",
+      "username": "",
+      "password": ""
     }
   ],
   "calendar": [
@@ -46,132 +51,43 @@
       "userId": "1"
     },
     {
-      "id": "783f",
-      "title": "The Bunker",
+      "id": "0a62",
+      "title": "Sinners",
       "date": "2025-04-19",
-      "userId": "1",
-      "watched": true
+      "userId": "1"
     }
   ],
   "watchlist": [
     {
-      "id": 324544,
+      "id": "33b9",
       "adult": false,
-      "backdrop_path": "/op3qmNhvwEvyT7UFyPbIfQmKriB.jpg",
+      "backdrop_path": "/oUgVgGaNqV9Y0Zdyjc1kCpzIe4G.jpg",
       "belongs_to_collection": null,
-      "budget": 55000000,
+      "budget": 90000000,
       "genres": [
         {
-          "id": 14,
-          "name": "Fantasy"
+          "id": 18,
+          "name": "Drama"
         },
         {
-          "id": 12,
-          "name": "Adventure"
+          "id": 27,
+          "name": "Horror"
         },
         {
-          "id": 28,
-          "name": "Action"
+          "id": 53,
+          "name": "Thriller"
         }
       ],
-      "homepage": "https://inthelostlands.com",
-      "imdb_id": "tt4419684",
-      "origin_country": [
-        "DE",
-        "CH"
-      ],
-      "original_language": "en",
-      "original_title": "In the Lost Lands",
-      "overview": "A queen sends the powerful and feared sorceress Gray Alys to the ghostly wilderness of the Lost Lands in search of a magical power, where she and her guide, the drifter Boyce, must outwit and outfight both man and demon.",
-      "popularity": 694.6783,
-      "poster_path": "/iHf6bXPghWB6gT8kFkL1zo00x6X.jpg",
-      "production_companies": [
-        {
-          "id": 47,
-          "logo_path": "/i7Z9ot2o3N5Sa3HrF09kniFs2y8.png",
-          "name": "Constantin Film",
-          "origin_country": "DE"
-        },
-        {
-          "id": 187303,
-          "logo_path": "/5CJA1Ej3gJxosjkzz2T7AeLw1SQ.png",
-          "name": "Spark Productions",
-          "origin_country": "CH"
-        }
-      ],
-      "production_countries": [
-        {
-          "iso_3166_1": "DE",
-          "name": "Germany"
-        },
-        {
-          "iso_3166_1": "CH",
-          "name": "Switzerland"
-        }
-      ],
-      "release_date": "2025-02-27",
-      "revenue": 4755330,
-      "runtime": 102,
-      "spoken_languages": [
-        {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
-        },
-        {
-          "english_name": "German",
-          "iso_639_1": "de",
-          "name": "Deutsch"
-        }
-      ],
-      "status": "Released",
-      "tagline": "She seeks the power to free her people.",
-      "title": "In the Lost Lands",
-      "video": false,
-      "vote_average": 6.289,
-      "vote_count": 201,
-      "userId": "3b35",
-      "added_at": "2025-04-18T15:36:06.115Z"
-    },
-    {
-      "id": 950387,
-      "adult": false,
-      "backdrop_path": "/2Nti3gYAX513wvhp8IiLL6ZDyOm.jpg",
-      "belongs_to_collection": {
-        "id": 1461530,
-        "name": "The Minecraft Movie Collection",
-        "poster_path": "/8jMQ2sVZ1RRiYSpcb7Yommo7V4r.jpg",
-        "backdrop_path": "/48TbIdb60bjLvVhj6W71YNvDM2p.jpg"
-      },
-      "budget": 150000000,
-      "genres": [
-        {
-          "id": 10751,
-          "name": "Family"
-        },
-        {
-          "id": 35,
-          "name": "Comedy"
-        },
-        {
-          "id": 12,
-          "name": "Adventure"
-        },
-        {
-          "id": 14,
-          "name": "Fantasy"
-        }
-      ],
-      "homepage": "https://www.minecraft-movie.com",
-      "imdb_id": "tt3566834",
+      "homepage": "https://www.sinnersmovie.com",
+      "imdb_id": "tt31193180",
       "origin_country": [
         "US"
       ],
       "original_language": "en",
-      "original_title": "A Minecraft Movie",
-      "overview": "Four misfits find themselves struggling with ordinary problems when they are suddenly pulled through a mysterious portal into the Overworld: a bizarre, cubic wonderland that thrives on imagination. To get back home, they'll have to master this world while embarking on a magical quest with an unexpected, expert crafter, Steve.",
-      "popularity": 663.4155,
-      "poster_path": "/yFHHfHcUgGAxziP1C3lLt0q2T4s.jpg",
+      "original_title": "Sinners",
+      "overview": "Trying to leave their troubled lives behind, twin brothers return to their hometown to start again, only to discover that an even greater evil is waiting to welcome them back.",
+      "popularity": 157.4069,
+      "poster_path": "/fWPgbnt2LSqkQ6cdQc0SZN9CpLm.jpg",
       "production_companies": [
         {
           "id": 174,
@@ -180,27 +96,9 @@
           "origin_country": "US"
         },
         {
-          "id": 923,
-          "logo_path": "/5UQsZrfbfG2dYJbx8DxfoTr2Bvu.png",
-          "name": "Legendary Pictures",
-          "origin_country": "US"
-        },
-        {
-          "id": 110691,
-          "logo_path": "/i0D9b0veZbValgEFiJjSd0mbb9C.png",
-          "name": "Mojang Studios",
-          "origin_country": "SE"
-        },
-        {
-          "id": 829,
-          "logo_path": "/aXqwCvJSCDbTclkxAYfsT1l4Dsa.png",
-          "name": "Vertigo Entertainment",
-          "origin_country": "US"
-        },
-        {
-          "id": 159602,
-          "logo_path": "/e3KodIPxOSC6xpzgIBISB4COQcu.png",
-          "name": "On the Roam",
+          "id": 148495,
+          "logo_path": "/2fQRDickgp9vuDIxJTlDLEs7j0y.png",
+          "name": "Proximity Media",
           "origin_country": "US"
         },
         {
@@ -212,212 +110,13 @@
       ],
       "production_countries": [
         {
-          "iso_3166_1": "SE",
-          "name": "Sweden"
-        },
-        {
           "iso_3166_1": "US",
           "name": "United States of America"
         }
       ],
-      "release_date": "2025-03-31",
-      "revenue": 552664857,
-      "runtime": 101,
-      "spoken_languages": [
-        {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
-        }
-      ],
-      "status": "Released",
-      "tagline": "Be there and be square.",
-      "title": "A Minecraft Movie",
-      "video": false,
-      "vote_average": 6.093,
-      "vote_count": 583,
-      "userId": "3b35",
-      "added_at": "2025-04-18T15:36:10.148Z"
-    },
-    {
-      "id": 1197306,
-      "adult": false,
-      "backdrop_path": "/xBrx6O1RIhjtWmVthZIANuQz7Z2.jpg",
-      "belongs_to_collection": null,
-      "budget": 40000000,
-      "genres": [
-        {
-          "id": 28,
-          "name": "Action"
-        },
-        {
-          "id": 80,
-          "name": "Crime"
-        },
-        {
-          "id": 53,
-          "name": "Thriller"
-        }
-      ],
-      "homepage": "https://www.amazon.com/salp/aworkingman?hhf",
-      "imdb_id": "tt9150192",
-      "origin_country": [
-        "GB",
-        "US"
-      ],
-      "original_language": "en",
-      "original_title": "A Working Man",
-      "overview": "Levon Cade left behind a decorated military career in the black ops to live a simple life working construction. But when his boss's daughter, who is like family to him, is taken by human traffickers, his search to bring her home uncovers a world of corruption far greater than he ever could have imagined.",
-      "popularity": 766.8163,
-      "poster_path": "/xUkUZ8eOnrOnnJAfusZUqKYZiDu.jpg",
-      "production_companies": [
-        {
-          "id": 118475,
-          "logo_path": "/x8mwqWGZK2gQvrp5QlYQho1VgXj.png",
-          "name": "Cedar Park Entertainment",
-          "origin_country": "US"
-        },
-        {
-          "id": 219295,
-          "logo_path": null,
-          "name": "BlockFilm",
-          "origin_country": "US"
-        },
-        {
-          "id": 218150,
-          "logo_path": null,
-          "name": "Punch Palace Productions",
-          "origin_country": "GB"
-        },
-        {
-          "id": 166120,
-          "logo_path": "/fRuHQF9DB4Zl3ha62D5Bpu1a5TL.png",
-          "name": "Balboa Productions",
-          "origin_country": "US"
-        },
-        {
-          "id": 22146,
-          "logo_path": "/v37N1mFeXNQfvPankg3feBhVvM7.png",
-          "name": "Black Bear Pictures",
-          "origin_country": "US"
-        },
-        {
-          "id": 181874,
-          "logo_path": "/crrgXvLhDO9c57HYrbO4H58Vxmb.png",
-          "name": "Fifth Season",
-          "origin_country": "US"
-        },
-        {
-          "id": 253169,
-          "logo_path": null,
-          "name": "CAT5",
-          "origin_country": "US"
-        }
-      ],
-      "production_countries": [
-        {
-          "iso_3166_1": "GB",
-          "name": "United Kingdom"
-        },
-        {
-          "iso_3166_1": "US",
-          "name": "United States of America"
-        }
-      ],
-      "release_date": "2025-03-26",
-      "revenue": 44417000,
-      "runtime": 116,
-      "spoken_languages": [
-        {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
-        },
-        {
-          "english_name": "Russian",
-          "iso_639_1": "ru",
-          "name": "Pусский"
-        },
-        {
-          "english_name": "Spanish",
-          "iso_639_1": "es",
-          "name": "Español"
-        }
-      ],
-      "status": "Released",
-      "tagline": "Human traffickers beware.",
-      "title": "A Working Man",
-      "video": false,
-      "vote_average": 6.266,
-      "vote_count": 276,
-      "userId": "80ac",
-      "added_at": "2025-04-18T15:36:25.284Z"
-    },
-    {
-      "id": 1045938,
-      "adult": false,
-      "backdrop_path": "/k32XKMjmXMGeydykD32jfER3BVI.jpg",
-      "belongs_to_collection": null,
-      "budget": 0,
-      "genres": [
-        {
-          "id": 28,
-          "name": "Action"
-        },
-        {
-          "id": 9648,
-          "name": "Mystery"
-        },
-        {
-          "id": 18,
-          "name": "Drama"
-        }
-      ],
-      "homepage": "https://www.amazon.com/dp/B0DV3V4HH6",
-      "imdb_id": "tt23476986",
-      "origin_country": [
-        "US"
-      ],
-      "original_language": "en",
-      "original_title": "G20",
-      "overview": "After the G20 Summit is overtaken by terrorists, President Danielle Sutton must bring all her statecraft and military experience to defend her family and her fellow leaders.",
-      "popularity": 561.6231,
-      "poster_path": "/tSee9gbGLfqwvjoWoCQgRZ4Sfky.jpg",
-      "production_companies": [
-        {
-          "id": 64469,
-          "logo_path": "/1hhdZwxGJDvFDArF8VDiqtdorSq.png",
-          "name": "JuVee Productions",
-          "origin_country": "US"
-        },
-        {
-          "id": 1757,
-          "logo_path": "/fc9qw5GoTbyWGa0QcfbsZFzuMKQ.png",
-          "name": "Mad Chance",
-          "origin_country": "US"
-        },
-        {
-          "id": 2531,
-          "logo_path": "/9MfCJ2G6Nrf9yyRj4tAgPmMiDcn.png",
-          "name": "MRC",
-          "origin_country": "US"
-        },
-        {
-          "id": 210099,
-          "logo_path": "/d6HwljzlOzxJ4tXlrpRkNZaZMWL.png",
-          "name": "Amazon MGM Studios",
-          "origin_country": "US"
-        }
-      ],
-      "production_countries": [
-        {
-          "iso_3166_1": "US",
-          "name": "United States of America"
-        }
-      ],
-      "release_date": "2025-04-09",
+      "release_date": "2025-04-16",
       "revenue": 0,
-      "runtime": 110,
+      "runtime": 138,
       "spoken_languages": [
         {
           "english_name": "English",
@@ -426,78 +125,14 @@
         }
       ],
       "status": "Released",
-      "tagline": "Never underestimate a patriot",
-      "title": "G20",
+      "tagline": "Dance with the devil.",
+      "title": "Sinners",
       "video": false,
-      "vote_average": 6.559,
-      "vote_count": 255,
-      "userId": "80ac",
-      "added_at": "2025-04-18T15:36:33.484Z"
-    },
-    {
-      "id": 1244944,
-      "adult": false,
-      "backdrop_path": "/3lEV4CoKoeT2cZ4fbKEJugZcw6Z.jpg",
-      "belongs_to_collection": null,
-      "budget": 12000000,
-      "genres": [
-        {
-          "id": 27,
-          "name": "Horror"
-        },
-        {
-          "id": 9648,
-          "name": "Mystery"
-        }
-      ],
-      "homepage": "https://www.thewomanintheyard.com",
-      "imdb_id": "tt31314296",
-      "origin_country": [
-        "US"
-      ],
-      "original_language": "en",
-      "original_title": "The Woman in the Yard",
-      "overview": "In the aftermath of her husband's death, widow Ramona's struggle to raise her two kids is hindered by the arrival of a mysterious woman with supernatural abilities.",
-      "popularity": 206.2565,
-      "poster_path": "/n0WS2TsNcS6dtaZKzxipyO7LuCJ.jpg",
-      "production_companies": [
-        {
-          "id": 3172,
-          "logo_path": "/rzKluDcRkIwHZK2pHsiT667A2Kw.png",
-          "name": "Blumhouse Productions",
-          "origin_country": "US"
-        },
-        {
-          "id": 8840,
-          "logo_path": "/dVr1iDtAMH3saF2PTQF2AWkR7fS.png",
-          "name": "Homegrown Pictures",
-          "origin_country": "US"
-        }
-      ],
-      "production_countries": [
-        {
-          "iso_3166_1": "US",
-          "name": "United States of America"
-        }
-      ],
-      "release_date": "2025-03-27",
-      "revenue": 21774732,
-      "runtime": 87,
-      "spoken_languages": [
-        {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
-        }
-      ],
-      "status": "Released",
-      "tagline": "Don't let her in.",
-      "title": "The Woman in the Yard",
-      "video": false,
-      "vote_average": 6.3,
-      "vote_count": 48,
-      "userId": "42ea",
-      "added_at": "2025-04-18T15:36:49.032Z"
+      "vote_average": 7.576,
+      "vote_count": 86,
+      "movieId": 1233413,
+      "userId": "1",
+      "added_at": "2025-04-19T11:35:54.886Z"
     }
   ]
 }

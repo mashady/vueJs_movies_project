@@ -36,5 +36,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
     background-color: #151515;
     color: #FFF;
   }
-
+  .pagination{
+    gap:5px!important
+}
 </style>
