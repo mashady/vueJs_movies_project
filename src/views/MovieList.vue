@@ -3,7 +3,10 @@
     <h2 class="text-light text-center mb-3">{{ title }}</h2>
 
     <SearchBar @search="handleSearch" />
-    <GenreFilter @filter="handleGenreFilter" />
+    <div class="d-flex justify-content-end">
+  <GenreFilter @filter="handleGenreFilter" />
+  <YearFilter @filter="handleYearFilter" />
+</div>
 
     <div v-if="store.loading" class="text-center text-light my-5">
       <div class="spinner-border text-light" role="status">
@@ -17,7 +20,7 @@
 
     <div v-else>
       <div v-if="filteredMovies.length === 0" class="text-center text-warning fs-4 mt-5">
-        <p class="no-movies">No movies found 😢</p>
+        <p class="no-movies">No movies found </p>
       </div>
 
       <div v-else class="container">
@@ -64,6 +67,7 @@ import { useMovieStore } from '../stores/movieStore'
 import MovieCard from '../components/MovieCard.vue'
 import SearchBar from '../components/SearchBar.vue'
 import GenreFilter from '../components/GenreFilter.vue'
+import YearFilter from '../components/YearFilter.vue'
 
 const props = defineProps({
   title: String,
@@ -73,13 +77,14 @@ const props = defineProps({
 const store = useMovieStore()
 const searchTerm = ref('')
 const activeGenre = ref(null)
+const activeYear = ref(null)
 
 const loadPage = (page = 1) => {
-  if (activeGenre.value) {
-    store.fetchByGenre(activeGenre.value, page)
-  } else {
-    store.fetchMovies(props.type, 'movie', page)
-  }
+  store.fetchByFilters({
+    genreId: activeGenre.value,
+    year: activeYear.value,
+    page
+  })
 }
 
 const handleSearch = (value) => {
@@ -91,18 +96,36 @@ const handleGenreFilter = (genreId) => {
   loadPage(1)
 }
 
+const handleYearFilter = (year) => {
+  activeYear.value = year || null
+  loadPage(1)
+}
+
 const goToPage = (page) => {
   if (page < 1 || page > store.totalPages) return
   loadPage(page)
 }
 
+const loadContent = () => {
+  if (searchTerm.value || activeGenre.value || activeYear.value) {
+    loadPage(1)
+  } else {
+    store.fetchMovies(props.type, 'movie', 1)
+  }
+}
+
 onMounted(() => {
-  loadPage(1)
+  loadContent()
 })
 
 watch(() => props.type, () => {
-  loadPage(1)
+  activeGenre.value = null
+  activeYear.value = null
+  searchTerm.value = ''
+  loadContent()
 })
+
+
 
 
 const filteredMovies = computed(() => {
@@ -112,6 +135,7 @@ const filteredMovies = computed(() => {
   )
 })
 </script>
+
 
 <style scoped>
 body {
