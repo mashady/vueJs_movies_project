@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid min-vh-100 py-4">
+  <div class="container-fluid min-vh-100 py-4 list-container">
     <h2 class="text-light text-center mb-3">{{ title }}</h2>
 
     <SearchBar @search="handleSearch" />
@@ -144,7 +144,9 @@ const filteredMovies = computed(() => {
 body {
   background-color: #000;
 }
-
+.list-container{
+  margin-top: 70px;
+}
 .spinner-border {
   width: 3rem;
   height: 3rem;

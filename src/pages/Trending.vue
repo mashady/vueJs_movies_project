@@ -1,6 +1,6 @@
 
 <template>
-  <div class="container-fluid min-vh-100 py-4">
+  <div class="container-fluid min-vh-100 py-4 list-container">
     <h2 class="text-light text-center mb-3">Trending Movies</h2>
     <SearchBar @search="handleSearch" />
 
@@ -89,7 +89,9 @@ const goToPage = (page) => {
   body {
     background-color: #000;
   }
-  
+  .list-container{
+    margin-top: 80px;
+  }
   .spinner-border {
     width: 3rem;
     height: 3rem;

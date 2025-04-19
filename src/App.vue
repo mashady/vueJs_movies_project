@@ -42,7 +42,7 @@ watch(() => route.path, () => {
   padding: 1rem;
 }
   main{
-    padding-top:180px;
+    padding-top:90px;
   }
   .main-content{
     background-color: #151515;

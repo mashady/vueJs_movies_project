@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid min-vh-100 py-4">
+  <div class="container-fluid min-vh-100 py-4 list-container">
     <h2 class="text-light text-center mb-3">All TV Shows</h2>
 
     <SearchBar @search="handleSearch" />
@@ -110,3 +110,8 @@ const filteredMovies = computed(() =>
   )
 )
 </script>
+<style scoped>
+.list-container{
+  margin-top: 80px;
+}
+</style>
