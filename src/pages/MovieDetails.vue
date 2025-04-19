@@ -24,13 +24,13 @@
 
             <div class="mt-3">
               <strong class="me-2">Genres:</strong>
-              <span v-for="genre in movie.genres" :key="genre.id" class="badge bg-info text-dark me-1">
+              <span v-for="genre in movie.genres" :key="genre.id" class="badge text-light me-1">
                 {{ genre.name }}
               </span>
             </div>
 
             <div class="mt-4 d-flex gap-2 flex-wrap">
-              <button @click="handleAddToWatchList" class="btn fw-bold"
+              <button @click="handleAddToWatchList" class="btn fw-bold watchlist-btn"
                 :class="isInWatchList(movie.id) ? 'btn-outline-secondary' : 'btn-warning'"
                 :disabled="isInWatchList(movie.id)">
                 {{ isInWatchList(movie.id) ? 'Added to Watchlist' : 'Add to Watchlist' }}
@@ -181,6 +181,41 @@ img {
 
 iframe {
   border-radius: 0.5rem;
+}
+
+.badge {
+  background-color: magenta;
+}
+
+.watchlist-btn {
+  background-image: linear-gradient(to right, #913af5, #e934a2);
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.watchlist-btn:hover {
+  background-image: linear-gradient(to right, #a24cf7, #f03db0);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(145, 58, 245, 0.4);
+  color: white;
+}
+
+.watchlist-btn:disabled {
+  background-image: linear-gradient(to right, #6a2cb5, #b82a8b);
+  opacity: 0.7;
+  cursor: not-allowed;
+  color: white;
+}
+
+@media (max-width: 576px) {
+
+  .watchlist-btn,
+  .datepicker-btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
 }
 
 

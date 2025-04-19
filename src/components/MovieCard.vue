@@ -9,9 +9,10 @@
           @error="handleImageError"
         />
 
-        <div v-if="showRemoveButton" class="remove-btn">
-          <button @click.stop="handleRemove" class="btn btn-danger btn-sm d-flex align-items-center gap-2">
-            <i class="bi bi-trash"></i>
+        <div v-if="showRemoveButton" class="remove-btn text-white">
+          <button @click.stop="handleRemove"
+            class="btn text-white btn-sm d-flex align-items-center gap-2">
+            <i class="bi bi-trash text-white"></i>
             Remove
           </button>
         </div>
@@ -139,7 +140,9 @@ const handleRemove = () => {
   opacity: 0;
   transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 2;
-}
+  background-image: linear-gradient(to right, #913af5, #e934a2);
+  color: white !important;
+  }
 
 .poster-wrapper:hover .remove-btn {
   opacity: 1;
