@@ -42,6 +42,14 @@
       "email": "mido@gmail.com",
       "firstName": "ali",
       "lastName": "x"
+    },
+    {
+      "id": "8a78",
+      "username": "aaaaaaa",
+      "password": "aaaaaaa",
+      "email": "aaaaaaa@gmail.com",
+      "firstName": "aaaaaaa",
+      "lastName": "aaaaaaa"
     }
   ],
   "calendar": [
@@ -79,6 +87,24 @@
       "id": "4471",
       "title": "Mickey 17",
       "date": "2025-04-19",
+      "userId": "1"
+    },
+    {
+      "id": "148d",
+      "title": "Sinners",
+      "date": "2025-04-21",
+      "userId": "1"
+    },
+    {
+      "id": "78cc",
+      "title": "Sinners",
+      "date": "2025-04-21",
+      "userId": "1"
+    },
+    {
+      "id": "572d",
+      "title": "Sinners",
+      "date": "2025-04-20",
       "userId": "1"
     }
   ],
@@ -189,6 +215,82 @@
       "movieId": 950387,
       "userId": null,
       "added_at": "2025-04-19T19:03:43.589Z"
+    },
+    {
+      "id": "e60e",
+      "adult": false,
+      "backdrop_path": "/oUgVgGaNqV9Y0Zdyjc1kCpzIe4G.jpg",
+      "belongs_to_collection": null,
+      "budget": 90000000,
+      "genres": [
+        {
+          "id": 18,
+          "name": "Drama"
+        },
+        {
+          "id": 27,
+          "name": "Horror"
+        },
+        {
+          "id": 53,
+          "name": "Thriller"
+        }
+      ],
+      "homepage": "https://www.sinnersmovie.com",
+      "imdb_id": "tt31193180",
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_title": "Sinners",
+      "overview": "Trying to leave their troubled lives behind, twin brothers return to their hometown to start again, only to discover that an even greater evil is waiting to welcome them back.",
+      "popularity": 157.4069,
+      "poster_path": "/fWPgbnt2LSqkQ6cdQc0SZN9CpLm.jpg",
+      "production_companies": [
+        {
+          "id": 174,
+          "logo_path": "/zhD3hhtKB5qyv7ZeL4uLpNxgMVU.png",
+          "name": "Warner Bros. Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 148495,
+          "logo_path": "/2fQRDickgp9vuDIxJTlDLEs7j0y.png",
+          "name": "Proximity Media",
+          "origin_country": "US"
+        },
+        {
+          "id": 216687,
+          "logo_path": "/kKVYqekveOvLK1IgqdJojLjQvtu.png",
+          "name": "Domain Entertainment",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2025-04-16",
+      "revenue": 0,
+      "runtime": 138,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Released",
+      "tagline": "Dance with the devil.",
+      "title": "Sinners",
+      "video": false,
+      "vote_average": 7.4,
+      "vote_count": 96,
+      "movieId": 1233413,
+      "userId": null,
+      "added_at": "2025-04-19T21:52:20.279Z"
     }
   ]
 }

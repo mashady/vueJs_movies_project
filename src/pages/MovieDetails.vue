@@ -140,6 +140,12 @@ onMounted(async () => {
 
 
 const handleAddToWatchList = async () => {
+  const user = localStorage.getItem('user')
+  if (!user) {
+    toast.error('Please login first to add movies to your watchlist.')
+    return
+  }
+
   try {
     await watchListStore.addToWatchList(movie.value)
     toast.success('Added to watchlist!')
@@ -147,6 +153,7 @@ const handleAddToWatchList = async () => {
     toast.error('Failed to add to watchlist.')
   }
 }
+
 const getActorImage = (profilePath) => {
   return profilePath 
     ? `https://image.tmdb.org/t/p/w200/${profilePath}`

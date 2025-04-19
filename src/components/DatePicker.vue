@@ -119,27 +119,45 @@ const saveDate = async () => {
   loading.value = true
 
   try {
-    const event = {
-      ...props.eventData,
-      date: selectedDate.value
-    }
-    let userId = JSON.parse(localStorage.getItem('user')).id
-    console.log(userId)
-    await store.addEvent(event, userId)
-
-
-    confirmationMessage.value = `${props.eventData.title} added to calendar on ${formatDate(selectedDate.value)}!`
-    showPicker.value = false
-
+  const user = localStorage.getItem('user')
+  if (!user) {
+    confirmationMessage.value = 'Please log in to add events to your calendar.'
     showConfirmation.value = true
-
     closePicker()
-  } catch (err) {
-    errorMessage.value = err.message || 'Failed to save date'
-    showError.value = true
-  } finally {
-    loading.value = false
+    return
   }
+
+  const now = new Date()
+  const selected = new Date(selectedDate.value)
+
+  if (selected < now.setHours(0, 0, 0, 0)) {
+    confirmationMessage.value = 'You cannot select a past date for your calendar.'
+    showConfirmation.value = true
+    closePicker()
+    return
+  }
+
+  const event = {
+    ...props.eventData,
+    date: selectedDate.value
+  }
+
+  const userId = JSON.parse(user).id
+  console.log(userId)
+
+  await store.addEvent(event, userId)
+
+  confirmationMessage.value = `${props.eventData.title} added to calendar on ${formatDate(selectedDate.value)}!`
+  showPicker.value = false
+  showConfirmation.value = true
+  closePicker()
+} catch (err) {
+  errorMessage.value = err.message || 'Failed to save date'
+  showError.value = true
+} finally {
+  loading.value = false
+}
+
 }
 
 const formatDate = (dateString) => {
