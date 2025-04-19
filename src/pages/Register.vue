@@ -140,7 +140,7 @@ export default {
 .auth-container {
   background: #151515;
   color: white;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
