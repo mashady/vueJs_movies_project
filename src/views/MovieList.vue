@@ -71,7 +71,11 @@ import YearFilter from '../components/YearFilter.vue'
 
 const props = defineProps({
   title: String,
-  type: String
+  type: String,
+  category: {
+    type: String,
+    default: 'movie'
+  }
 })
 
 const store = useMovieStore()
@@ -80,27 +84,32 @@ const activeGenre = ref(null)
 const activeYear = ref(null)
 
 const loadPage = (page = 1) => {
-  store.fetchByFilters({
-    genreId: activeGenre.value,
-    year: activeYear.value,
-    page,
-    category: 'tv' 
-  })
+  if (activeGenre.value || activeYear.value) {
+    
+    store.fetchByFilters({
+      genreId: activeGenre.value,
+      year: activeYear.value,
+      page,
+      category: props.category
+    })
+  } else {
+    
+    store.fetchMovies(props.type, props.category, page)
+  }
 }
-
 
 const handleSearch = (value) => {
   searchTerm.value = value.toLowerCase()
 }
 
 const handleGenreFilter = (genreId) => {
-  activeGenre.value = genreId || null
-  loadPage(1)
+  activeGenre.value = genreId
+  loadPage(1) 
 }
 
 const handleYearFilter = (year) => {
-  activeYear.value = year || null
-  loadPage(1)
+  activeYear.value = year
+  loadPage(1) 
 }
 
 const goToPage = (page) => {
@@ -108,32 +117,24 @@ const goToPage = (page) => {
   loadPage(page)
 }
 
-const loadContent = () => {
-  if (searchTerm.value || activeGenre.value || activeYear.value) {
-    loadPage(1)
-  } else {
-    store.fetchMovies(props.type, 'movie', 1)
-  }
-}
-
 onMounted(() => {
-  loadContent()
+  loadPage(1)
+  store.fetchGenres(props.category)
 })
 
 watch(() => props.type, () => {
   activeGenre.value = null
   activeYear.value = null
   searchTerm.value = ''
-  loadContent()
+  loadPage(1)
 })
 
-
-
-
 const filteredMovies = computed(() => {
+ 
   if (!searchTerm.value) return store.results
+  
   return store.results.filter(movie =>
-    movie.title?.toLowerCase().includes(searchTerm.value)
+    (movie.title || movie.name).toLowerCase().includes(searchTerm.value)
   )
 })
 </script>

@@ -1,4 +1,4 @@
-// stores/movieStore.js
+
 import { defineStore } from 'pinia'
 import axios from 'axios'
 
@@ -112,21 +112,20 @@ export const useMovieStore = defineStore('movieStore', {
         this.loading = false
       }
     },
+
     async fetchByFilters({ genreId = null, year = null, page = 1, category = 'movie' }) {
       this.loading = true
       this.error = null
       this.currentPage = page
       this.results = []
       this.data = {}
-    
-      this.selectedGenre = genreId
-      this.selectedYear = year
-    
-      const endpoint = `${BASE_URL}/discover/${category}` // ← هنا التعديل
-    
+      
+      const endpoint = `${BASE_URL}/discover/${category}`
+      
       const params = {
         page,
-        language: 'en-US'
+        language: 'en-US',
+        sort_by: 'popularity.desc' 
       }
     
       if (genreId) {
@@ -134,7 +133,11 @@ export const useMovieStore = defineStore('movieStore', {
       }
     
       if (year) {
-        params.primary_release_year = year
+        if (category === 'movie') {
+          params.primary_release_year = year
+        } else {
+          params.first_air_date_year = year
+        }
       }
     
       try {
@@ -149,15 +152,16 @@ export const useMovieStore = defineStore('movieStore', {
         this.data = response.data
         this.results = response.data.results
         this.totalPages = response.data.total_pages
+        this.selectedGenre = genreId
+        this.selectedYear = year
       } catch (err) {
         this.error = err.message
+        console.error('API Error:', err)
       } finally {
         this.loading = false
       }
     }
-    
-    
-    ,
+      ,
 
     async nextPage() {
       if (this.currentPage < this.totalPages) {
