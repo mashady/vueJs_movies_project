@@ -8,30 +8,33 @@ export const useWatchListStore = defineStore('watchlist', {
         watchlist: [],
         loading: false,
         error: null,
-        currentUserId: JSON.parse(localStorage.getItem('user'))?.id || null
+        getCurrentUserId: () => JSON.parse(localStorage.getItem('user'))?.id || null
     }),
+
     actions: {
         async fetchWatchList() {
             this.loading = true
-            this.currentUserId = JSON.parse(localStorage.getItem('user'))?.id
+            const userId = this.getCurrentUserId()
             try {
-                const response = await axios.get(`${LOCAL_API}/watchlist?userId=${this.currentUserId}`)
+                const response = await axios.get(`${LOCAL_API}/watchlist?userId=${userId}`)
                 this.watchlist = response.data
             } catch (err) {
                 this.error = err
+                console.error('Fetch failed:', err)
             } finally {
                 this.loading = false
             }
         },
 
         async addToWatchList(movie) {
+            const userId = this.getCurrentUserId()
             try {
-                const existing = await axios.get(`${LOCAL_API}/watchlist?id=${movie.id}&userId=${this.currentUserId}`)
+                const existing = await axios.get(`${LOCAL_API}/watchlist?id=${movie.id}&userId=${userId}`)
                 if (existing.data.length > 0) return
 
                 const response = await axios.post(`${LOCAL_API}/watchlist`, {
                     ...movie,
-                    userId: this.currentUserId,
+                    userId: userId,
                     added_at: new Date().toISOString()
                 })
                 this.watchlist.push(response.data)
@@ -41,8 +44,9 @@ export const useWatchListStore = defineStore('watchlist', {
         },
 
         async removeFromWatchList(movieId) {
+            const userId = this.getCurrentUserId()
             try {
-                const movieToRemove = this.watchlist.find(movie => movie.id === movieId)
+                const movieToRemove = this.watchlist.find(movie => movie.id === movieId && movie.userId === userId)
                 if (movieToRemove) {
                     await axios.delete(`${LOCAL_API}/watchlist/${movieToRemove.id}`)
                     this.watchlist = this.watchlist.filter(movie => movie.id !== movieId)
@@ -50,10 +54,12 @@ export const useWatchListStore = defineStore('watchlist', {
                 }
                 return false
             } catch (error) {
+                console.error('Remove failed:', error)
                 throw error
             }
         }
     },
+
     getters: {
         isInWatchList: (state) => (movieId) => {
             return state.watchlist.some(movie => movie.id === movieId)
