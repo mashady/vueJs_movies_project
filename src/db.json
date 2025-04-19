@@ -49,77 +49,8 @@
       "id": "0a62",
       "title": "Sinners",
       "date": "2025-04-19",
-      "userId": "1",
-      "watched": true
-    },
-    {
-      "id": "28b3",
-      "title": "Novocaine",
-      "date": "2025-04-19",
-      "userId": "af7f"
+      "userId": "1"
     }
   ],
-  "watchlist": [
-    {
-      "id": "1195506",
-      "adult": false,
-      "backdrop_path": "/oUgVgGaNqV9Y0Zdyjc1kCpzIe4G.jpg",
-      "belongs_to_collection": null,
-      "budget": 90000000,
-      "genres": [
-        {
-          "id": 18,
-          "name": "Drama"
-        },
-        {
-          "id": 27,
-          "name": "Horror"
-        },
-        {
-          "id": 53,
-          "name": "Thriller"
-        }
-      ],
-      "homepage": "https://www.sinnersmovie.com",
-      "imdb_id": "tt31193180",
-      "origin_country": [
-        "US"
-      ],
-      "original_language": "en",
-      "original_title": "Novocaine",
-      "overview": "When the girl of his dreams is kidnapped, everyman Nate turns his inability to feel pain into an unexpected strength in his fight to get her back.",
-      "popularity": 551.0521,
-      "poster_path": "/xmMHGz9dVRaMY6rRAlEX4W0Wdhm.jpg",
-      "release_date": "2025-03-12",
-      "title": "Novocaine",
-      "video": false,
-      "vote_average": 6.873,
-      "vote_count": 408,
-      "userId": "42ea",
-      "added_at": "2025-04-16T23:29:41.794Z"
-    },
-    {
-      "id": "1045938",
-      "adult": false,
-      "backdrop_path": "/k32XKMjmXMGeydykD32jfER3BVI.jpg",
-      "genre_ids": [
-        28,
-        9648,
-        18
-      ],
-      "original_language": "en",
-      "original_title": "G20",
-      "overview": "After the G20 Summit is overtaken by terrorists, President Danielle Sutton must bring all her statecraft and military experience to defend her family and her fellow leaders.",
-      "popularity": 687.7088,
-      "poster_path": "/tSee9gbGLfqwvjoWoCQgRZ4Sfky.jpg",
-      "release_date": "2025-04-09",
-      "title": "G20",
-      "video": false,
-      "vote_average": 7.576,
-      "vote_count": 86,
-      "movieId": 1233413,
-      "userId": "1",
-      "added_at": "2025-04-19T11:35:54.886Z"
-    }
-  ]
+  "watchlist": []
 }
