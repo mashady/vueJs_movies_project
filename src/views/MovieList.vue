@@ -83,9 +83,11 @@ const loadPage = (page = 1) => {
   store.fetchByFilters({
     genreId: activeGenre.value,
     year: activeYear.value,
-    page
+    page,
+    category: 'tv' 
   })
 }
+
 
 const handleSearch = (value) => {
   searchTerm.value = value.toLowerCase()

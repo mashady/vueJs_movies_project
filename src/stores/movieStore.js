@@ -112,32 +112,31 @@ export const useMovieStore = defineStore('movieStore', {
         this.loading = false
       }
     },
-
-    async fetchByFilters({ genreId = null, year = null, page = 1 }) {
+    async fetchByFilters({ genreId = null, year = null, page = 1, category = 'movie' }) {
       this.loading = true
       this.error = null
       this.currentPage = page
       this.results = []
       this.data = {}
-
+    
       this.selectedGenre = genreId
       this.selectedYear = year
-
-      const endpoint = `${BASE_URL}/discover/movie`
-
+    
+      const endpoint = `${BASE_URL}/discover/${category}` // ← هنا التعديل
+    
       const params = {
         page,
         language: 'en-US'
       }
-
+    
       if (genreId) {
         params.with_genres = genreId
       }
-
+    
       if (year) {
         params.primary_release_year = year
       }
-
+    
       try {
         const response = await axios.get(endpoint, {
           params,
@@ -146,7 +145,7 @@ export const useMovieStore = defineStore('movieStore', {
             Authorization: `Bearer ${API_KEY}`
           }
         })
-
+    
         this.data = response.data
         this.results = response.data.results
         this.totalPages = response.data.total_pages
@@ -155,7 +154,10 @@ export const useMovieStore = defineStore('movieStore', {
       } finally {
         this.loading = false
       }
-    },
+    }
+    
+    
+    ,
 
     async nextPage() {
       if (this.currentPage < this.totalPages) {
