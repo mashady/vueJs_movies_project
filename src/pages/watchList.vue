@@ -33,28 +33,48 @@
 </template>
 
 <script setup>
-import { computed, onMounted } from 'vue'
+import { onMounted, watch, onActivated } from 'vue'
+import { useRoute } from 'vue-router'
 import { useToast } from 'vue-toastification'
 import { useWatchListStore } from '../stores/watchListStore'
 import MovieCard from '../components/MovieCard.vue'
+import { computed } from 'vue';
 
-const watchlistStore = useWatchListStore()
 const toast = useToast()
+const route = useRoute()
+const watchlistStore = useWatchListStore()
 
 const loading = computed(() => watchlistStore.loading)
 const watchlist = computed(() => watchlistStore.watchlist)
 
-onMounted(() => {
+const fetchWatchList = () => {
     watchlistStore.fetchWatchList()
+}
+
+onMounted(() => {
+    fetchWatchList()
 })
 
-const removeFromWatchList = async (movieId) => {
+onActivated(() => {
+    fetchWatchList()
+})
+
+watch(() => route.fullPath, () => {
+    fetchWatchList()
+})
+
+const removeFromWatchList = async (movie) => {
+    console.log(movie)
+    console.log("remooooooooooooooved")
+    console.log(movie.id)
     try {
-        const success = await watchlistStore.removeFromWatchList(movieId)
-        if (success) toast.success('Removed from watchlist')
+        const success = await watchlistStore.removeFromWatchList(movie.id)
+        await watchlistStore.fetchWatchList()
+        if (success) {
+            toast.success('Removed from watchlist')
+        }
     } catch (error) {
         toast.error('Failed to remove')
-        console.error('Error:', error)
     }
 }
 </script>
@@ -65,7 +85,6 @@ const removeFromWatchList = async (movieId) => {
 }
 
 .empty-watchlist {
-    background-color: #343a40;
     border-radius: 10px;
     padding: 2rem;
 }

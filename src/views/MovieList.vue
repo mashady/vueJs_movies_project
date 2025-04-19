@@ -195,7 +195,9 @@ body {
 .search-bar {
   margin-bottom: 1.5rem;
 }
-
+.pagination{
+    gap:5px!important
+}
 .no-movies {
   font-size: 1.5rem;
   font-weight: 600;

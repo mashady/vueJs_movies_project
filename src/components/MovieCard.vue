@@ -1,15 +1,18 @@
 <template>
-  <div
-    class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 d-flex"
-    @click="goToDetails"
-    style="cursor: pointer"
-  >
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 d-flex" @click="goToDetails" style="cursor: pointer">
     <div class="card movie-card text-light border-0 shadow w-100">
-      <img
-        :src="'https://image.tmdb.org/t/p/w500/' + movie.poster_path"
-        class="card-img-top movie-img"
-        :alt="movie.title"
-      />
+      <div class="poster-wrapper position-relative">
+        <img :src="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="card-img-top movie-img"
+          :alt="movie.title" />
+
+        <div v-if="showRemoveButton" class="remove-btn">
+          <button @click.stop="handleRemove" class="btn btn-danger btn-sm d-flex align-items-center gap-2">
+            <i class="bi bi-trash"></i>
+            Remove
+          </button>
+        </div>
+      </div>
+
       <div class="card-body d-flex flex-column">
         <h5 class="card-title">{{ movie.title || movie.name }}
         </h5>
@@ -35,7 +38,28 @@
 <script setup>
 import { useRouter } from 'vue-router'
 
-const props = defineProps(['movie'])
+const props = defineProps({
+  movie: {
+    type: Object,
+    required: true
+  },
+  addToWatchList: {
+    type: Function,
+    default: null
+  },
+  isInWatchList: {
+    type: Function,
+    default: null
+  },
+  showRemoveButton: {
+    type: Boolean,
+    default: false
+  },
+  onRemove: {
+    type: Function,
+    default: null
+  }
+})
 const router = useRouter()
 
 const renderStars = (rating) => {
@@ -45,6 +69,12 @@ const renderStars = (rating) => {
 
 const goToDetails = () => {
   router.push(`/movie/${props.movie.id}`)
+}
+
+const handleRemove = () => {
+  if (props.onRemove) {
+    props.onRemove(props.movie)
+  }
 }
 </script>
 
@@ -76,5 +106,20 @@ const goToDetails = () => {
   display: flex;
   flex-direction: column;
   padding: 1rem;
+}
+
+.remove-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 2;
+}
+
+.poster-wrapper:hover .remove-btn {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
 }
 </style>
