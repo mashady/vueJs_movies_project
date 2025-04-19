@@ -1,14 +1,64 @@
 <template>
   <div class="auth-container">
-    <h1 class="logo">FLO<span class="x">X</span></h1>
-    <div class="form-box">
-      <input v-model="username" type="text" placeholder="Username" />
-      <input v-model="password" type="password" placeholder="Password" />
-      <input v-model="email" type="email" placeholder="Email" />
-      <input v-model="firstName" type="text" placeholder="First Name" />
-      <input v-model="lastName" type="text" placeholder="Last Name" />
-      <button @click="register">REGISTER</button>
-      <p>
+    <div class="form-box needs-validation" novalidate>
+      <input
+        v-model="username"
+        :class="['form-control', validation.username === false ? 'is-invalid' : validation.username === true ? 'is-valid' : '']"
+        type="text"
+        placeholder="Username"
+        @blur="validateField('username')"
+      />
+      <div v-if="validation.username === false" class="invalid-feedback">
+        Username is required.
+      </div>
+
+      <input
+        v-model="password"
+        :class="['form-control', validation.password === false ? 'is-invalid' : validation.password === true ? 'is-valid' : '']"
+        type="password"
+        placeholder="Password"
+        @blur="validateField('password')"
+      />
+      <div v-if="validation.password === false" class="invalid-feedback">
+        Password must be at least 6 characters.
+      </div>
+
+      <input
+        v-model="email"
+        :class="['form-control', validation.email === false ? 'is-invalid' : validation.email === true ? 'is-valid' : '']"
+        type="email"
+        placeholder="Email"
+        @blur="validateField('email')"
+      />
+      <div v-if="validation.email === false" class="invalid-feedback">
+        Enter a valid email address.
+      </div>
+
+      <input
+        v-model="firstName"
+        :class="['form-control', validation.firstName === false ? 'is-invalid' : validation.firstName === true ? 'is-valid' : '']"
+        type="text"
+        placeholder="First Name"
+        @blur="validateField('firstName')"
+      />
+      <div v-if="validation.firstName === false" class="invalid-feedback">
+        First name is required.
+      </div>
+
+      <input
+        v-model="lastName"
+        :class="['form-control', validation.lastName === false ? 'is-invalid' : validation.lastName === true ? 'is-valid' : '']"
+        type="text"
+        placeholder="Last Name"
+        @blur="validateField('lastName')"
+      />
+      <div v-if="validation.lastName === false" class="invalid-feedback">
+        Last name is required.
+      </div>
+
+      <button class="btn btn-primary" @click="register">REGISTER</button>
+
+      <p class="mt-3">
         Already have an account?
         <router-link to="/login">Login</router-link>
       </p>
@@ -24,27 +74,66 @@ export default {
       password: '',
       email: '',
       firstName: '',
-      lastName: ''
+      lastName: '',
+      validation: {
+        username: null,
+        password: null,
+        email: null,
+        firstName: null,
+        lastName: null
+      }
     };
   },
   methods: {
+    validateField(field) {
+      const value = this[field];
+      switch (field) {
+        case 'username':
+        case 'firstName':
+        case 'lastName':
+          this.validation[field] = value.trim().length > 0;
+          break;
+        case 'password':
+          this.validation[field] = value.length >= 6;
+          break;
+        case 'email':
+          this.validation[field] = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+          break;
+      }
+    },
+    validateAll() {
+      ['username', 'password', 'email', 'firstName', 'lastName'].forEach(this.validateField);
+      return Object.values(this.validation).every(Boolean);
+    },
     async register() {
-      const res = await fetch('http://localhost:3000/users', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          username: this.username,
-          password: this.password
-        })
-      });
-      if (res.ok) {
-        this.$router.push('/login');
-      } else {
-        alert('Failed to register');
+      if (!this.validateAll()) {
+        return;
+      }
+
+      try {
+        const res = await fetch('http://localhost:3000/users', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            username: this.username,
+            password: this.password,
+            email: this.email,
+            firstName: this.firstName,
+            lastName: this.lastName
+          })
+        });
+
+        if (res.ok) {
+          this.$router.push('/login');
+        } else {
+          console.log('Failed to register');
+        }
+      } catch (err) {
+        console.log('Something went wrong');
       }
     }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -71,12 +160,31 @@ export default {
   width: 280px;
 }
 input {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   padding: 10px;
   background: #2a2a2a;
-  border: none;
+  border: 1px solid #444;
   color: white;
   outline: none;
+  border-radius: 4px;
+}
+input::placeholder {
+  color: #888;
+}
+input:focus {
+  background-color: #2a2a2a;
+  color: white;
+}
+input.is-invalid {
+  border-color: #dc3545;
+}
+input.is-valid {
+  border-color: #28a745;
+}
+.invalid-feedback {
+  font-size: 12px;
+  color: #dc3545;
+  margin-bottom: 10px;
 }
 button {
   padding: 10px;
@@ -84,7 +192,7 @@ button {
   border: none;
   color: white;
   cursor: pointer;
-  margin-bottom: 10px;
+  border-radius: 4px;
 }
 p {
   font-size: 14px;

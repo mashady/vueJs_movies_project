@@ -1,6 +1,5 @@
 <template>
   <div class="auth-container">
-    <h1 class="logo">FLO<span class="x">X</span></h1>
     <div class="form-box">
       <input v-model="username" type="text" placeholder="Username" />
       <input v-model="password" type="password" placeholder="Password" />
@@ -31,17 +30,24 @@ export default {
   },
   methods: {
     async login() {
-      const res = await fetch(
-        `http://localhost:3000/users?username=${this.username}&password=${this.password}`
-      );
-      const users = await res.json();
-      if (users.length > 0) {
-        localStorage.setItem('user', JSON.stringify(users[0]));
-        window.location.href = '/';
-      } else {
-        this.showModal = true;
-      }
-    },
+  if (!this.username || !this.password) {
+    this.showModal = true;
+    return;
+  }
+
+  const res = await fetch(
+    `http://localhost:3000/users?username=${this.username}&password=${this.password}`
+  );
+  const users = await res.json();
+
+  if (users.length > 0) {
+    localStorage.setItem('user', JSON.stringify(users[0]));
+    window.location.href = '/';
+  } else {
+    this.showModal = true;
+  }
+}
+,
     closeModal() {
       this.showModal = false;
     }
@@ -77,12 +83,31 @@ export default {
 }
 
 input {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   padding: 10px;
   background: #2a2a2a;
-  border: none;
+  border: 1px solid #444;
   color: white;
   outline: none;
+  border-radius: 4px;
+}
+input::placeholder {
+  color: #888;
+}
+input:focus {
+  background-color: #2a2a2a;
+  color: white;
+}
+input.is-invalid {
+  border-color: #dc3545;
+}
+input.is-valid {
+  border-color: #28a745;
+}
+.invalid-feedback {
+  font-size: 12px;
+  color: #dc3545;
+  margin-bottom: 10px;
 }
 
 button {
@@ -91,6 +116,7 @@ button {
   border: none;
   color: white;
   cursor: pointer;
+  border-radius: 4px;
   margin-bottom: 10px;
 }
 
