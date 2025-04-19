@@ -14,7 +14,8 @@
       </div>
 
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">{{ movie.title }}</h5>
+        <h5 class="card-title">{{ movie.title || movie.name }}
+        </h5>
         <p class="card-text small">
           {{ movie.overview?.slice(0, 100) }}...
         </p>

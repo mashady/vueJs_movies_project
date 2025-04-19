@@ -21,14 +21,9 @@
       "password": "123456789"
     },
     {
-      "id": "d50d",
-      "username": "",
-      "password": ""
-    },
-    {
-      "id": "c0bb",
-      "username": "",
-      "password": ""
+      "id": "af7f",
+      "username": "Ayaa",
+      "password": "aya123"
     }
   ],
   "calendar": [
@@ -54,12 +49,19 @@
       "id": "0a62",
       "title": "Sinners",
       "date": "2025-04-19",
-      "userId": "1"
+      "userId": "1",
+      "watched": true
+    },
+    {
+      "id": "28b3",
+      "title": "Novocaine",
+      "date": "2025-04-19",
+      "userId": "af7f"
     }
   ],
   "watchlist": [
     {
-      "id": "33b9",
+      "id": "1195506",
       "adult": false,
       "backdrop_path": "/oUgVgGaNqV9Y0Zdyjc1kCpzIe4G.jpg",
       "belongs_to_collection": null,
@@ -84,49 +86,34 @@
         "US"
       ],
       "original_language": "en",
-      "original_title": "Sinners",
-      "overview": "Trying to leave their troubled lives behind, twin brothers return to their hometown to start again, only to discover that an even greater evil is waiting to welcome them back.",
-      "popularity": 157.4069,
-      "poster_path": "/fWPgbnt2LSqkQ6cdQc0SZN9CpLm.jpg",
-      "production_companies": [
-        {
-          "id": 174,
-          "logo_path": "/zhD3hhtKB5qyv7ZeL4uLpNxgMVU.png",
-          "name": "Warner Bros. Pictures",
-          "origin_country": "US"
-        },
-        {
-          "id": 148495,
-          "logo_path": "/2fQRDickgp9vuDIxJTlDLEs7j0y.png",
-          "name": "Proximity Media",
-          "origin_country": "US"
-        },
-        {
-          "id": 216687,
-          "logo_path": "/kKVYqekveOvLK1IgqdJojLjQvtu.png",
-          "name": "Domain Entertainment",
-          "origin_country": "US"
-        }
+      "original_title": "Novocaine",
+      "overview": "When the girl of his dreams is kidnapped, everyman Nate turns his inability to feel pain into an unexpected strength in his fight to get her back.",
+      "popularity": 551.0521,
+      "poster_path": "/xmMHGz9dVRaMY6rRAlEX4W0Wdhm.jpg",
+      "release_date": "2025-03-12",
+      "title": "Novocaine",
+      "video": false,
+      "vote_average": 6.873,
+      "vote_count": 408,
+      "userId": "42ea",
+      "added_at": "2025-04-16T23:29:41.794Z"
+    },
+    {
+      "id": "1045938",
+      "adult": false,
+      "backdrop_path": "/k32XKMjmXMGeydykD32jfER3BVI.jpg",
+      "genre_ids": [
+        28,
+        9648,
+        18
       ],
-      "production_countries": [
-        {
-          "iso_3166_1": "US",
-          "name": "United States of America"
-        }
-      ],
-      "release_date": "2025-04-16",
-      "revenue": 0,
-      "runtime": 138,
-      "spoken_languages": [
-        {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
-        }
-      ],
-      "status": "Released",
-      "tagline": "Dance with the devil.",
-      "title": "Sinners",
+      "original_language": "en",
+      "original_title": "G20",
+      "overview": "After the G20 Summit is overtaken by terrorists, President Danielle Sutton must bring all her statecraft and military experience to defend her family and her fellow leaders.",
+      "popularity": 687.7088,
+      "poster_path": "/tSee9gbGLfqwvjoWoCQgRZ4Sfky.jpg",
+      "release_date": "2025-04-09",
+      "title": "G20",
       "video": false,
       "vote_average": 7.576,
       "vote_count": 86,
