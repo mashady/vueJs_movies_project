@@ -4,8 +4,13 @@
       <div class="card bg-dark text-light shadow-lg p-4">
         <div class="row g-4">
           <div class="col-md-4 text-center">
-            <img :src="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="Poster"
-              class="img-fluid rounded shadow" />
+            <img
+  :src="getPosterImage(movie.poster_path)"
+  alt="Poster"
+  class="img-fluid rounded shadow movie-detail-poster"
+  @error="handleImageError2"
+/>
+
           </div>
           <div class="col-md-8">
             <h2 class="mb-3">{{ movie.title }}</h2>
@@ -47,16 +52,19 @@
       </div>
 
       <div v-if="cast.length" class="mt-5">
-        <h4 class="text-center mb-4"> Top Cast</h4>
-        <div class="d-flex flex-wrap justify-content-center gap-4">
-          <div v-for="actor in cast.slice(0, 6)" :key="actor.cast_id" class="text-center" style="width: 120px">
-            <img
-              :src="actor.profile_path ? 'https://image.tmdb.org/t/p/w200/' + actor.profile_path : 'https://via.placeholder.com/100x150?text=No+Image'"
-              class="img-fluid rounded" alt="Cast Member" />
-            <small class="d-block mt-1">{{ actor.name }}</small>
-          </div>
-        </div>
-      </div>
+  <h4 class="text-center mb-4">Top Cast</h4>
+  <div class="d-flex flex-wrap justify-content-center gap-4">
+    <div v-for="actor in cast.slice(0, 6)" :key="actor.cast_id" class="text-center" style="width: 120px">
+      <img
+        :src="getActorImage(actor.profile_path)"
+        class="img-fluid rounded cast-image"
+        :alt="actor.name"
+        @error="handleImageError"
+      />
+      <small class="d-block mt-1">{{ actor.name }}</small>
+    </div>
+  </div>
+</div>
     </div>
 
     <div v-else class="text-center my-5">
@@ -129,6 +137,8 @@ onMounted(async () => {
   }
 })
 
+
+
 const handleAddToWatchList = async () => {
   try {
     await watchListStore.addToWatchList(movie.value)
@@ -137,10 +147,30 @@ const handleAddToWatchList = async () => {
     toast.error('Failed to add to watchlist.')
   }
 }
+const getActorImage = (profilePath) => {
+  return profilePath 
+    ? `https://image.tmdb.org/t/p/w200/${profilePath}`
+    : '/default-actor.png';
+};
 
+const handleImageError = (event) => {
+  event.target.src = '/default-actor.png';
+  event.target.classList.add('default-image');
+};
 const isInWatchList = (movieId) => {
   return watchListStore.isInWatchList(movieId)
 }
+
+const getPosterImage = (posterPath) => {
+  return posterPath
+    ? `https://image.tmdb.org/t/p/w500/${posterPath}`
+    : '/default-movie.jpg';
+};
+
+const handleImageError2 = (event) => {
+  event.target.src = '/default-movie.jpg';
+  event.target.classList.add('default-poster');
+};
 </script>
 
 <style scoped>
@@ -187,4 +217,35 @@ iframe {
     margin-bottom: 0.5rem;
   }
 }
+
+
+.cast-image:hover {
+  transform: scale(1.05);
+}
+
+.cast-image {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  border: 1px solid #444;
+}
+
+.cast-image[src*="default-actor.png"] {
+  background-color: #333;
+  padding: 10px;
+}
+.movie-detail-poster {
+  width: 100%;
+  max-width: 300px;
+  height: 450px;
+  object-fit: cover;
+  background-color: #2c3e50;
+}
+
+.movie-detail-poster.default-poster {
+  object-fit: contain;
+  padding: 1rem;
+  background-color: #343a40;
+}
+
 </style>

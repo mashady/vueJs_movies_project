@@ -10,6 +10,7 @@ import AllTV from '../pages/AllTV.vue'
 import Calendar from '../pages/Calendar.vue'
 import watchList from '../pages/watchList.vue'
 import MovieDetails from '../pages/MovieDetails.vue'
+import TvDetail from '../pages/TvDetail.vue'
 
 const requireAuth = (to, from, next) => {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -110,6 +111,11 @@ const routes = [
     meta: {
       title: 'Movie Details - Flox'
     }
+  },
+  {
+    path: '/tv/:id',
+    name: 'TvDetail',
+    component: TvDetail,
   }
 ];
 

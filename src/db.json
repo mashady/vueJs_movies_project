@@ -21,9 +21,27 @@
       "password": "123456789"
     },
     {
-      "id": "af7f",
-      "username": "Ayaa",
-      "password": "aya123"
+      "id": "d50d",
+      "username": "",
+      "password": ""
+    },
+    {
+      "id": "c0bb",
+      "username": "",
+      "password": ""
+    },
+    {
+      "id": "d423",
+      "username": "",
+      "password": ""
+    },
+    {
+      "id": "5bf2",
+      "username": "samir",
+      "password": "123456789",
+      "email": "mido@gmail.com",
+      "firstName": "ali",
+      "lastName": "x"
     }
   ],
   "calendar": [
@@ -50,39 +68,60 @@
       "title": "Sinners",
       "date": "2025-04-19",
       "userId": "1"
+    },
+    {
+      "id": "8df2",
+      "title": "Sinners",
+      "date": "2025-04-19",
+      "userId": "1"
+    },
+    {
+      "id": "4471",
+      "title": "Mickey 17",
+      "date": "2025-04-19",
+      "userId": "1"
     }
   ],
   "watchlist": [
     {
-      "id": "33b9",
+      "id": "e33a",
       "adult": false,
-      "backdrop_path": "/oUgVgGaNqV9Y0Zdyjc1kCpzIe4G.jpg",
-      "belongs_to_collection": null,
-      "budget": 90000000,
+      "backdrop_path": "/2Nti3gYAX513wvhp8IiLL6ZDyOm.jpg",
+      "belongs_to_collection": {
+        "id": 1461530,
+        "name": "The Minecraft Movie Collection",
+        "poster_path": "/8jMQ2sVZ1RRiYSpcb7Yommo7V4r.jpg",
+        "backdrop_path": "/48TbIdb60bjLvVhj6W71YNvDM2p.jpg"
+      },
+      "budget": 150000000,
       "genres": [
         {
-          "id": 18,
-          "name": "Drama"
+          "id": 10751,
+          "name": "Family"
         },
         {
-          "id": 27,
-          "name": "Horror"
+          "id": 35,
+          "name": "Comedy"
         },
         {
-          "id": 53,
-          "name": "Thriller"
+          "id": 12,
+          "name": "Adventure"
+        },
+        {
+          "id": 14,
+          "name": "Fantasy"
         }
       ],
-      "homepage": "https://www.sinnersmovie.com",
-      "imdb_id": "tt31193180",
+      "homepage": "https://www.minecraft-movie.com",
+      "imdb_id": "tt3566834",
       "origin_country": [
         "US"
       ],
       "original_language": "en",
-      "original_title": "Sinners",
-      "overview": "Trying to leave their troubled lives behind, twin brothers return to their hometown to start again, only to discover that an even greater evil is waiting to welcome them back.",
-      "popularity": 157.4069,
-      "poster_path": "/fWPgbnt2LSqkQ6cdQc0SZN9CpLm.jpg",
+      "original_title": "A Minecraft Movie",
+      "overview": "Four misfits find themselves struggling with ordinary problems when they are suddenly pulled through a mysterious portal into the Overworld: a bizarre, cubic wonderland that thrives on imagination. To get back home, they'll have to master this world while embarking on a magical quest with an unexpected, expert crafter, Steve.",
+      "popularity": 664.0547,
+      "poster_path": "/yFHHfHcUgGAxziP1C3lLt0q2T4s.jpg",
       "production_companies": [
         {
           "id": 174,
@@ -91,9 +130,27 @@
           "origin_country": "US"
         },
         {
-          "id": 148495,
-          "logo_path": "/2fQRDickgp9vuDIxJTlDLEs7j0y.png",
-          "name": "Proximity Media",
+          "id": 923,
+          "logo_path": "/5UQsZrfbfG2dYJbx8DxfoTr2Bvu.png",
+          "name": "Legendary Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 110691,
+          "logo_path": "/i0D9b0veZbValgEFiJjSd0mbb9C.png",
+          "name": "Mojang Studios",
+          "origin_country": "SE"
+        },
+        {
+          "id": 829,
+          "logo_path": "/aXqwCvJSCDbTclkxAYfsT1l4Dsa.png",
+          "name": "Vertigo Entertainment",
+          "origin_country": "US"
+        },
+        {
+          "id": 159602,
+          "logo_path": "/e3KodIPxOSC6xpzgIBISB4COQcu.png",
+          "name": "On the Roam",
           "origin_country": "US"
         },
         {
@@ -105,13 +162,17 @@
       ],
       "production_countries": [
         {
+          "iso_3166_1": "SE",
+          "name": "Sweden"
+        },
+        {
           "iso_3166_1": "US",
           "name": "United States of America"
         }
       ],
-      "release_date": "2025-04-16",
-      "revenue": 0,
-      "runtime": 138,
+      "release_date": "2025-03-31",
+      "revenue": 576626515,
+      "runtime": 101,
       "spoken_languages": [
         {
           "english_name": "English",
@@ -120,14 +181,14 @@
         }
       ],
       "status": "Released",
-      "tagline": "Dance with the devil.",
-      "title": "Sinners",
+      "tagline": "Be there and be square.",
+      "title": "A Minecraft Movie",
       "video": false,
-      "vote_average": 7.576,
-      "vote_count": 86,
-      "movieId": 1233413,
-      "userId": "1",
-      "added_at": "2025-04-19T11:35:54.886Z"
+      "vote_average": 6.142,
+      "vote_count": 625,
+      "movieId": 950387,
+      "userId": null,
+      "added_at": "2025-04-19T19:03:43.589Z"
     }
   ]
 }
