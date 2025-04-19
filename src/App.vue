@@ -1,10 +1,10 @@
 <template>
   <NavBar />
+  <Search v-if="showSearchBar" @search="handleSearch" />
   <main class="main-content " style="min-height: 150vh">
-<div class="">
-  <RouterView />
-
-</div>
+    <div class="">
+      <RouterView />
+    </div>
   </main>
   <Footer />
 </template>
@@ -12,6 +12,18 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+const showSearchBar = ref(true)
+
+watch(() => route.path, () => {
+  showSearchBar.value = false
+  setTimeout(() => {
+    showSearchBar.value = true
+  }, 10)
+})
 </script>
 
 <style>
@@ -30,7 +42,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
   padding: 1rem;
 }
   main{
-    padding-top:100px;
+    padding-top:180px;
   }
   .main-content{
     background-color: #151515;

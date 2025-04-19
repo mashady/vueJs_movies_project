@@ -1,5 +1,5 @@
 <template>
-    <div class="genre-filter mb-4 d-flex justify-content-end">
+    <div class="genre-filter mb-4 d-flex justify-content-end container">
       <select 
         v-model="selectedGenre" 
         @change="handleGenreChange"

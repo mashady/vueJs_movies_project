@@ -3,7 +3,7 @@
     <h2 class="text-light text-center mb-3">{{ title }}</h2>
 
     <SearchBar @search="handleSearch" />
-    <div class="d-flex justify-content-end">
+    <div class="d-flex justify-content-end container">
   <GenreFilter @filter="handleGenreFilter" />
   <YearFilter @filter="handleYearFilter" />
 </div>

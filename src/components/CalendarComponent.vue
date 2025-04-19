@@ -1,12 +1,7 @@
 <template>
   <div>
-    <vue-cal
-      :events="store.events"
-      default-view="month"
-      style="height: 800px"
-      :time="false"
-      @event-click="showMovieDetails"
-    />
+    <vue-cal :events="store.events" default-view="month" style="height: 800px" :time="false"
+      @event-click="showMovieDetails" />
 
     <div v-if="store.selectedMovie" class="modal-backdrop" @click="closeMovieModal">
       <div class="movie-modal" @click.stop>
@@ -14,19 +9,13 @@
         <h3 class="text-xl font-bold mb-2">{{ store.selectedMovie.title }}</h3>
         <p class="mb-2"><strong>Date:</strong> {{ store.selectedMovie.start }}</p>
         <p v-if="store.selectedMovie.description" class="mb-2">{{ store.selectedMovie.description }}</p>
-        
+
         <div class="flex gap-2 mt-4">
-          <button 
-            v-if="!store.selectedMovie.watched" 
-            class="action-btn bg-purple-600" 
-            @click="markAsWatched(store.selectedMovie.id)"
-          >
+          <button v-if="!store.selectedMovie.watched" class="action-btn bg-purple-600"
+            @click="markAsWatched(store.selectedMovie.id)">
             Mark as watched
           </button>
-          <button 
-            class="action-btn bg-red-600" 
-            @click="confirmDeleteMovie(store.selectedMovie.id)"
-          >
+          <button class="action-btn bg-red-600" @click="confirmDeleteMovie(store.selectedMovie.id)">
             Delete
           </button>
         </div>
@@ -37,19 +26,12 @@
       <div class="confirm-modal" @click.stop>
         <h3 class="text-lg font-bold mb-4">Confirm Delete</h3>
         <p>Are you sure you want to delete this movie from your calendar?</p>
-        
+
         <div class="flex gap-4 mt-4">
-          <button 
-            class="action-btn bg-gray-600" 
-            @click="showConfirmDelete = false"
-          >
+          <button class="action-btn bg-gray-600" @click="showConfirmDelete = false">
             Cancel
           </button>
-          <button 
-            class="action-btn bg-red-600" 
-            @click="deleteMovie"
-            :disabled="store.loading"
-          >
+          <button class="action-btn bg-red-600" @click="deleteMovie" :disabled="store.loading">
             Delete
           </button>
         </div>
@@ -105,7 +87,7 @@ store.fetchEvents(userId)
 
 <style scoped>
 .vuecal__event {
-  background-color: #a970ff;
+  background-color: #913af5;
   color: white;
   border-radius: 4px;
   padding: 2px 4px;
@@ -114,7 +96,7 @@ store.fetchEvents(userId)
 }
 
 ::v-deep(.vuecal__title button) {
-  color: #6c63ff !important;
+  color: #913af5 !important;
 }
 
 ::v-deep(.vuecal__arrow) {
@@ -135,7 +117,8 @@ store.fetchEvents(userId)
   z-index: 1000;
 }
 
-.movie-modal, .confirm-modal {
+.movie-modal,
+.confirm-modal {
   background: #151515;
   padding: 20px;
   border-radius: 8px;
@@ -146,7 +129,7 @@ store.fetchEvents(userId)
 }
 
 .close-btn {
-  color:#FFF;
+  color: #FFF;
   float: right;
   font-size: 1.5rem;
   background: none;
@@ -156,11 +139,11 @@ store.fetchEvents(userId)
 
 .action-btn {
   color: white;
-  background-color: #6c63ff !important;
+  background-color: #913af5 !important;
   padding: 8px 16px;
   border-radius: 4px;
   border: none;
   cursor: pointer;
-margin-right: 5px;
+  margin-right: 5px;
 }
 </style>

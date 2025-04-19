@@ -4,7 +4,7 @@
     <h2 class="text-light text-center mb-3">Trending Movies</h2>
     <SearchBar @search="handleSearch" />
 
-    <div class="d-flex justify-content-end mb-3">
+    <div class="d-flex justify-content-end mb-3 container">
       <TimeFilter @filter="handleTimeFilter" />
     </div>
 
@@ -20,21 +20,13 @@
 
     <div class="container">
       <div class="row justify-content-center">
-        <MovieCard
-          v-for="movie in filteredMovies"
-          :key="movie.id"
-          :movie="movie"
-          class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
-        />
+        <MovieCard v-for="movie in filteredMovies" :key="movie.id" :movie="movie"
+          class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" />
       </div>
 
       <nav class="d-flex justify-content-center mt-4">
         <ul class="pagination pagination-dark">
-          <li
-            class="page-item"
-            :class="{ disabled: store.currentPage === 1 }"
-            @click="goToPage(store.currentPage - 1)"
-          >
+          <li class="page-item" :class="{ disabled: store.currentPage === 1 }" @click="goToPage(store.currentPage - 1)">
             <a class="page-link bg-dark text-light border-light" href="#">Previous</a>
           </li>
           <li class="page-item disabled">
@@ -42,11 +34,8 @@
               Page {{ store.currentPage }} of {{ store.totalPages }}
             </span>
           </li>
-          <li
-            class="page-item"
-            :class="{ disabled: store.currentPage === store.totalPages }"
-            @click="goToPage(store.currentPage + 1)"
-          >
+          <li class="page-item" :class="{ disabled: store.currentPage === store.totalPages }"
+            @click="goToPage(store.currentPage + 1)">
             <a class="page-link bg-dark text-light border-light" href="#">Next</a>
           </li>
         </ul>

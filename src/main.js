@@ -7,6 +7,7 @@ import NavBar from './components/NavBar.vue'
 import Footer from './components/Footer.vue'
 import Toast from 'vue-toastification'
 import 'vue-toastification/dist/index.css'
+import SearchBar from './components/SearchBar.vue'
 
 import 'bootstrap'
 import 'vue-cal/dist/vuecal.css'
@@ -18,6 +19,7 @@ app.use(router)
 
 app.component('NavBar', NavBar)
 app.component('Footer', Footer)
+app.component('SearchBar', SearchBar)
 
 app.use(Toast, {
   position: 'bottom-center',
